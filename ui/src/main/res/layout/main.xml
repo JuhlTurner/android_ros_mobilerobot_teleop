@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/black"
+    >
+
+    <org.ros.android.view.RosImageView
+        android:id="@+id/ros_camera_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/btnLL"
+        android:orientation="vertical"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:text="Stop"/>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_joystick"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/image_button_bg"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="23dp">
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/signalstrength"
+            android:background="@android:color/transparent"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="100dp"
+            android:background="@android:color/transparent"
+            android:layout_height="20dp"
+            android:id="@+id/progressBarWifi"
+            android:layout_gravity="center_horizontal|top" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top">
+
+        <Switch
+            android:id="@+id/joystick_switch"
+            android:background="@android:color/transparent"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enable_joystick"
+            android:layout_gravity="right"/>
+
+        <Switch
+            android:id="@+id/acc_switch"
+            android:background="@android:color/transparent"
+            android:checked="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enable_acc"
+            android:layout_gravity="right"
+            android:textColor="@android:color/primary_text_dark" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        >
+
+        <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:id="@+id/progressBarSpeedBackward"
+                android:layout_weight="1"
+                android:max="100"
+                android:rotation="180"/>
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="10dp"
+                android:background="@android:color/transparent"
+                android:progress="100"
+                android:max="100"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarSpeedMid" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="match_parent"
+                android:id="@+id/progressBarSpeedForward"
+                android:layout_weight="1"
+                android:max="100" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:id="@+id/progressBarTurnLeft"
+                android:layout_weight="1"
+                android:rotation="180"
+                android:max="100"
+                android:layout_gravity="bottom" />
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="10dp"
+                android:background="@android:color/transparent"
+                android:progress="100"
+                android:max="100"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarTurnMid"
+                android:layout_gravity="bottom" />
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBarTurnRight"
+                android:layout_weight="1"
+                android:max="100"
+                android:layout_gravity="bottom" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+
