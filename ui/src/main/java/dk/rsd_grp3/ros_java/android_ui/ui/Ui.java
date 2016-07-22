@@ -202,8 +202,9 @@ public class Ui extends RosActivity implements SensorEventListener
             SensorManager.getOrientation(rMatrix, result);
             convertToDegrees(result);
             x = -result[1];
+
             if(-10.0 < x && x < 10.0)
-                x = (float)0.0;
+                xNom = (float)0.0;
             else {
                 if(x < 0.0)
                     x = x + (float)10;
@@ -216,6 +217,9 @@ public class Ui extends RosActivity implements SensorEventListener
                 else if (xNom < -1.0)
                     xNom = (float)-1.0;
             }
+
+
+
             JoyStikPub.updateAxis(xNom,0);
             updateSpeedTurnUI(xNom,0);
         }
